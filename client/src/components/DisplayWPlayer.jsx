@@ -30,17 +30,21 @@ const DisplaynameWinStats = (props) => {
     <div>
       <h1>Winning Player's name: {faction}</h1>
       <div className="d-inline-flex">
-      <h4 className=" bg-success">Victories: {countDataW.map((Losses, index) => {
-          return(
-                <div className="border-top border-dark" key={Losses._id}>{Losses._id}, Number of Wins:{Losses.count} </div>
-              )})}
-        </h4>
-        <div className="inbetween"></div>
-        <h4 className="bg-danger">Losses: {countDataL.map((wins, index) => {
-          return(
-                <div className="border-top border-dark" key={wins._id}>{wins._id}, Number of Losses:{wins.count} </div>
-              )})}
-        </h4>
+        <div className=" container bg-success">
+        <h4 >Victories with: {countDataW.map((wins, index) => {
+            return(
+                  <div className="border-top border-dark" key={wins._id}>{wins._id}, {wins.count} </div>
+                )})}
+          </h4>
+          </div>
+          <div className="inbetween"></div>
+          <div className=" container bg-danger">
+          <h4 >Wins against: {countDataL.map((losses, index) => {
+            return(
+                  <div className="border-top border-dark" key={losses._id}>{losses._id},{losses.count} </div>
+                )})}
+          </h4>
+          </div>
         </div>
     </div>
   );

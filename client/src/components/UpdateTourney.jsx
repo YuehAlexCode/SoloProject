@@ -16,7 +16,7 @@ const UpdateTourney = () => {
     })
     useEffect(() => {
         axios
-          .get("http://localhost:8000/api/tourney"+ id, newtourneyData, {withCredentials:true})
+          .get("http://localhost:8000/api/tourney"+ id, {withCredentials:true})
           .then((res) => {
             console.log(res);
             setNewTourneyData(res.data);

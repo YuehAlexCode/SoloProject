@@ -44,7 +44,7 @@ const DisplayAllLoggedIn = () => {
         <h3>
             <a href="/tourney/create"> Create Event</a>
         </h3>
-        <div className="col-md-6 mx-auto">
+        <div className="col-md-8 mx-auto">
           <table className="table table-dark table-striped">
             <thead>
               <tr>
@@ -68,6 +68,12 @@ const DisplayAllLoggedIn = () => {
                     <td><a className="text-decoration-none" href={`/Wfaction/${tourney.winningFaction}`}>{tourney.winningFaction}</a></td>
                     <td><a className="text-decoration-none" href={`/Lfaction/${tourney.losingFaction}`}>{tourney.losingFaction}</a></td>
                     <td>
+                    <button className="btn btn-warning"
+                       onClick={() => navigate(`/tourney/edit/${tourney._id}`)}
+                       Edit
+                      >
+                        Edit
+                      </button>
                       <button
                         onClick={() => handleDeletetourney(tourney._id)}
                         className="btn btn-danger"

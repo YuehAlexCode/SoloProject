@@ -4,6 +4,7 @@ import { Routes, Route} from "react-router-dom";
 import TournamentDisplayLoggedin from "./view/TournamentDisplayLoggedin";
 import TournamentDisplay from "./view/TournamentDisplay";
 import CreateTourney from "./components/CreateTourney";
+import UpdateTourney from "./components/UpdateTourney";
 import Register from './view/Register';
 import Login from './view/Login';
 import LossFactionPage from "./view/FactionDisplayLoss";
@@ -24,7 +25,8 @@ function App() {
                 <Route path="players/login" element={<Login/>} />
                 <Route path="/logged" element={<TournamentDisplayLoggedin/>}/>
                 <Route path="/" element={<TournamentDisplay/>}/>
-                <Route path="/tourney/create" element={<CreateTourney />}  />   
+                <Route path="/tourney/create" element={<CreateTourney />}  />
+                <Route path="/tourney/edit/:id" element={<UpdateTourney />}  />    
                 <Route path="/Lfaction/:faction" element={<LossFactionPage />}  />   
                 <Route path="/Wfaction/:faction" element={<WinFactionPage />}  />   
                 <Route path="/wplayer/:faction" element={<WinPlayerPage />}  /> 

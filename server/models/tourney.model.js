@@ -29,7 +29,12 @@ const TourneySchema= new mongoose.Schema(
             type: String,
             enum: ["Space Marines", "Eldar", "Tau","Necrons","Imperial Guard","etc"],
             required: [true, "Opponent faction must not be blank"]
-        },    
+        },   
+         
+        user_id: {
+          type:mongoose.Types.ObjectId,
+          ref:"User"
+      }
       },
      { timestamps: true });
 

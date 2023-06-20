@@ -5,8 +5,8 @@ module.exports = (app)=>{
     app.post("/api/tourney", TourneyController.createTourney);
     app.get("/api/tourney", TourneyController.findAllTourneys);
     app.get("/api/protectedtourney", authenticate, TourneyController.findAllTourneys);
-    app.get("/api/tourney/:id", TourneyController.getOneTourney);
-    app.put("/api/tourney/:id", TourneyController.updateTourney);
+    app.get("/api/tourney/:id",authenticate, TourneyController.getOneTourney);
+    app.put("/api/tourney/:id",authenticate, TourneyController.updateTourney);
     app.delete("/api/tourney/:id", TourneyController.deleteTourney);
     app.get("/api/wfaction/:faction", TourneyController.getOneWFaction);
     app.get("/api/lfaction/:faction", TourneyController.getOneLFaction);

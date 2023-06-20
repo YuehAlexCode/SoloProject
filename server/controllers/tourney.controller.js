@@ -1,6 +1,7 @@
 const Tourney = require("../models/tourney.model.js"); 
 
 module.exports.createTourney = (req, res) =>{
+    
     Tourney.create(req.body)
         .then((newTourney)=>res.json(newTourney))
         .catch(err=> res.json({message: 'Something went wrong', error: err}))
@@ -17,6 +18,14 @@ module.exports.getOneTourney = (req, res) =>{
         .then((oneTourney) => res.json(oneTourney))
         .catch((err) => console({message: 'Something went wrong', error: err}))
 
+},
+
+module.exports.updateTourney = (req, res) => {
+    Tourney.findById({ _id: req.params.id }, req.body, {
+        new: true, 
+        runValidators: true,})
+        .then((updatedTourney) => res.json(updatedTourney))
+        .catch((err) => console({message: 'Something went wrong', error: err}))
 },
 
 module.exports.updateTourney = (req, res) => {
